@@ -1,3 +1,7 @@
+package org.example.entrega.state;
+
+import org.example.entrega.model.Pedido;
+
 public class PedidoEstadoEmPreparacao implements PedidoEstado {
 
     private static final PedidoEstadoEmPreparacao instance = new PedidoEstadoEmPreparacao();
@@ -10,7 +14,7 @@ public class PedidoEstadoEmPreparacao implements PedidoEstado {
 
     @Override
     public String getEstado() {
-        return "Em Preparação";
+        return "Em Preparacao";
     }
 
     @Override

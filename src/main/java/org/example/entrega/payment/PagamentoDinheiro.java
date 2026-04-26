@@ -1,3 +1,5 @@
+package org.example.entrega.payment;
+
 public class PagamentoDinheiro implements PagamentoStrategy {
 
     public PagamentoDinheiro() {}

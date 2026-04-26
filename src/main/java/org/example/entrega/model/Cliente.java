@@ -1,3 +1,5 @@
+package org.example.entrega.model;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -29,7 +31,7 @@ public class Cliente implements Observer {
         if (arg instanceof String) {
             this.ultimaNotificacao = (String) arg;
         } else {
-            this.ultimaNotificacao = "Atualização no pedido.";
+            this.ultimaNotificacao = "Atualizacao no pedido.";
         }
     }
 }

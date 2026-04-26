@@ -1,3 +1,7 @@
+package org.example.entrega.state;
+
+import org.example.entrega.model.Pedido;
+
 public class PedidoEstadoCancelado implements PedidoEstado {
 
     private static final PedidoEstadoCancelado instance = new PedidoEstadoCancelado();

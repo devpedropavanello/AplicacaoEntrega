@@ -1,5 +1,12 @@
+package org.example.entrega;
+
+import org.example.entrega.model.Cliente;
+import org.example.entrega.model.Pedido;
+import org.example.entrega.service.PedidoGerenciador;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 class SingletonTest {
 
@@ -7,6 +14,7 @@ class SingletonTest {
     void deveRetornarMesmaInstancia() {
         PedidoGerenciador p1 = PedidoGerenciador.getInstancia();
         PedidoGerenciador p2 = PedidoGerenciador.getInstancia();
+
         assertSame(p1, p2);
     }
 
@@ -22,4 +30,3 @@ class SingletonTest {
         assertEquals(p1, ger.getPedidos().get(0));
     }
 }
-

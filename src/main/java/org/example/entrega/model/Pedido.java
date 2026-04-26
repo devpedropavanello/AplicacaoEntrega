@@ -1,3 +1,9 @@
+package org.example.entrega.model;
+
+import org.example.entrega.payment.PagamentoStrategy;
+import org.example.entrega.state.PedidoEstado;
+import org.example.entrega.state.PedidoEstadoCriado;
+
 import java.util.Observable;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -66,11 +72,12 @@ public class Pedido extends Observable {
 
     public float aplicarPagamento(PagamentoStrategy strategy) {
         if (strategy == null) {
-            throw new IllegalArgumentException("Strategy de pagamento não informada.");
+            throw new IllegalArgumentException("Strategy de pagamento nao informada.");
         }
 
         float pago = strategy.pagar(this.total);
         this.valorPago = pago;
+        this.pagamentoStrategy = strategy;
 
         setChanged();
         notifyObservers("Pagamento realizado: R$ " + pago);

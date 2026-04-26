@@ -1,3 +1,7 @@
+package org.example.entrega.service;
+
+import org.example.entrega.model.Pedido;
+
 import java.util.ArrayList;
 import java.util.List;
 

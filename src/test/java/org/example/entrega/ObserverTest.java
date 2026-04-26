@@ -1,5 +1,11 @@
+package org.example.entrega;
+
+import org.example.entrega.model.Cliente;
+import org.example.entrega.model.Pedido;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class ObserverTest {
 
@@ -32,7 +38,6 @@ class ObserverTest {
     @Test
     void naoDeveNotificarClienteNaoInscrito() {
         Pedido pedido = new Pedido(null, 30.0f);
-
         Cliente cliente = new Cliente("Lucas", "3333");
 
         pedido.notificar("Pedido alterado");
@@ -42,11 +47,11 @@ class ObserverTest {
 
     @Test
     void deveRegistrarMensagemPadraoQuandoArgNaoEhString() {
-        Cliente cliente = new Cliente("João", "7777");
+        Cliente cliente = new Cliente("Joao", "7777");
         Pedido pedido = new Pedido(cliente, 200.0f);
 
         pedido.notificar(null);
 
-        assertEquals("Atualização no pedido.", cliente.getUltimaNotificacao());}}
-
-
+        assertEquals("Atualizacao no pedido.", cliente.getUltimaNotificacao());
+    }
+}
